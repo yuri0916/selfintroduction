@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天気予報</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .weather-day {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>3日間の天気予報</h1>
+    <div>
+        <c:forEach var="weather" items="${weatherList}">
+            <div class="weather-day">
+                <h2>${weather.date}</h2>
+                <p>最高気温: ${weather.maxTemp}</p>
+                <p>最低気温: ${weather.minTemp}</p>
+                <img src="static/icons/${weather.icon}" alt="天気アイコン">
+            </div>
+        </c:forEach>
+    </div>
+</body>
+</html>
+
